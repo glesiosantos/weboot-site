@@ -1,12 +1,12 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Weboot | Sites, Sistemas, APIs e Automações',
-  description: 'A Weboot desenvolve sites institucionais, projetos web personalizados, APIs REST, manutenção WordPress e automações inteligentes para empresas.',
-  ogTitle: 'Weboot | Sites, Sistemas, APIs e Automações',
-  ogDescription: 'Tecnologia que impulsiona o futuro da sua empresa. Sites, sistemas, APIs, integrações e automações sob medida.',
+  title: 'Weboot | Sites, E-commerce, Sistemas, APIs e Automações',
+  description: 'Criação de sites institucionais, landing pages, e-commerce, manutenção WordPress, sistemas personalizados, APIs REST, automações com n8n e treinamentos.',
+  ogTitle: 'Weboot | Sites, E-commerce, Sistemas, APIs e Automações',
+  ogDescription: 'Sites, lojas virtuais, sistemas, APIs e automações desenvolvidos sob medida para empresas.',
   ogType: 'website',
-  ogImage: 'https://weboot.com.br/images/og-weboot.svg',
-  ogImageAlt: 'Weboot — Tecnologia que impulsiona o futuro da sua empresa',
+  ogImage: 'https://weboot.com.br/images/weboot_logo.png',
+  ogImageAlt: 'Weboot — desenvolvimento web sob medida',
   twitterCard: 'summary_large_image'
 })
 
@@ -19,14 +19,7 @@ useHead({
       '@type': 'ProfessionalService',
       name: 'Weboot',
       url: 'https://weboot.com.br/',
-      email: 'contato@weboot.com.br',
-      description: 'Desenvolvimento de sites, sistemas web, APIs REST, integrações e automações.',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Teresina',
-        addressRegion: 'PI',
-        addressCountry: 'BR'
-      },
+      description: 'Desenvolvimento de sites, e-commerce, sistemas, APIs REST, integrações e automações.',
       areaServed: 'BR'
     })
   }]
@@ -40,16 +33,19 @@ useScrollReveal()
     <LayoutAppHeader />
     <main id="main-content">
       <SectionsHeroSection />
-      <SectionsStatsSection />
+      <SectionsTrustBar />
       <SectionsServicesSection />
-      <SectionsBenefitsSection />
+      <SectionsWebsiteSolutionsSection />
+      <SectionsWordPressSection />
+      <SectionsCustomSolutionsSection />
       <SectionsProcessSection />
       <SectionsPortfolioSection />
-      <SectionsTestimonialsSection />
+      <SectionsTrainingSection />
+      <SectionsBenefitsSection />
       <SectionsFaqSection />
-      <SectionsContactSection />
       <SectionsFinalCtaSection />
     </main>
     <LayoutAppFooter />
+    <WhatsappWhatsAppFloatingButton />
   </div>
 </template>

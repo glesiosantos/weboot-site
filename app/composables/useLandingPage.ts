@@ -1,94 +1,102 @@
 import {
-  Bot, Braces, ChartNoAxesCombined, Clock3,
-  CloudCog, Code2, Compass, FileCode2, Gauge, Handshake, Headphones,
-  Link2, MonitorSmartphone,
-  Palette, Rocket, Search, ShieldCheck, Sparkles, Target
+  Bot, Braces, Code2, Database, GraduationCap, LayoutTemplate,
+  MessageSquareMore, MonitorSmartphone, Search, ShieldCheck, ShoppingBag,
+  Wrench
 } from 'lucide-vue-next'
-import type {
-  Benefit, ContactLinks, FaqItem, NavigationItem, PortfolioProject,
-  ProcessStep, Service, Stat, Testimonial
-} from '~/types/landing-page'
-
-const whatsappNumber = '55NUMERO' // Dado provisório: substituir pelo número oficial antes da publicação.
-const whatsappMessage = 'Olá! Conheci a Weboot pelo site e gostaria de conversar sobre um projeto.'
+import type { FaqItem, NavigationItem, Service, Training } from '~/types/landing-page'
 
 export const useLandingPage = () => {
-  const contactLinks: ContactLinks = {
-    whatsapp: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
-    email: 'mailto:contato@weboot.com.br',
-    phoneDisplay: '(86) 00000-0000', // Dado provisório.
-    location: 'Teresina - PI'
-  }
-
   const navigation: NavigationItem[] = [
-    { label: 'Início', href: '#inicio' },
-    { label: 'Serviços', href: '#services' },
-    { label: 'Benefícios', href: '#benefits' },
-    { label: 'Portfólio', href: '#portfolio' },
-    { label: 'Depoimentos', href: '#testimonials' },
-    { label: 'Sobre', href: '#about' },
-    { label: 'Contato', href: '#contact' }
-  ]
-
-  // Conteúdo demonstrativo: substituir por dados reais antes da publicação.
-  const stats: Stat[] = [
-    { id: 'projects', value: '+200', label: 'projetos entregues', icon: Rocket },
-    { id: 'satisfaction', value: '+98%', label: 'de satisfação', icon: ChartNoAxesCombined },
-    { id: 'experience', value: '+15', label: 'anos transformando negócios', icon: Clock3 },
-    { id: 'support', value: 'Ágil', label: 'suporte próximo', icon: Headphones }
+    { label: 'Início', href: '/#inicio' },
+    { label: 'Serviços', href: '/#servicos' },
+    { label: 'Projetos', href: '/#projetos' },
+    { label: 'Treinamentos', href: '/#treinamentos' },
+    { label: 'Sobre', href: '/#como-trabalhamos' },
+    { label: 'Contato', href: '/#contato' }
   ]
 
   const services: Service[] = [
-    { id: 'sites', title: 'Sites institucionais', description: 'Sites modernos, responsivos e otimizados para transmitir credibilidade e gerar oportunidades.', icon: MonitorSmartphone, href: '#contact' },
-    { id: 'wordpress', title: 'Manutenção WordPress', description: 'Atualizações, segurança, backups, correções, desempenho e evolução contínua do seu site.', icon: ShieldCheck, href: '#contact' },
-    { id: 'custom-web', title: 'Projetos web personalizados', description: 'Sistemas desenvolvidos sob medida para os processos e necessidades da sua empresa.', icon: Code2, href: '#contact' },
-    { id: 'apis', title: 'APIs REST', description: 'APIs seguras, documentadas e escaláveis para conectar sistemas, clientes e plataformas.', icon: Braces, href: '#contact' },
-    { id: 'automation', title: 'Automações inteligentes', description: 'Automatize tarefas, atendimento e fluxos operacionais utilizando n8n e inteligência artificial.', icon: Bot, href: '#contact' },
-    { id: 'integration', title: 'Integração entre sistemas', description: 'Conecte aplicações, ERPs, CRMs, WhatsApp, meios de pagamento e serviços externos.', icon: Link2, href: '#contact' }
+    {
+      id: 'sites', title: 'Sites institucionais',
+      description: 'Sites profissionais para apresentar sua empresa, seus serviços e facilitar o contato com novos clientes.',
+      benefits: ['Design responsivo', 'Carregamento rápido', 'SEO técnico', 'Integração com WhatsApp', 'Estrutura para conversão'],
+      cta: 'Quero criar meu site',
+      message: 'Olá! Gostaria de conversar sobre a criação de um site institucional para minha empresa.',
+      icon: MonitorSmartphone
+    },
+    {
+      id: 'landing-pages', title: 'Landing Pages',
+      description: 'Páginas para campanhas, lançamentos, anúncios, captação de contatos e venda de produtos ou serviços.',
+      benefits: ['Foco em uma oferta', 'CTAs estratégicos', 'Integração com campanhas', 'Medição de conversões', 'Experiência mobile'],
+      cta: 'Criar uma landing page',
+      message: 'Olá! Preciso de uma landing page para divulgar um produto, serviço ou campanha.',
+      icon: LayoutTemplate
+    },
+    {
+      id: 'ecommerce', title: 'E-commerce',
+      description: 'Lojas virtuais preparadas para apresentar produtos, receber pedidos e integrar pagamentos.',
+      benefits: ['Catálogo de produtos', 'Carrinho de compras', 'Pagamentos', 'Integração com WhatsApp', 'Gestão de pedidos'],
+      cta: 'Criar minha loja virtual',
+      message: 'Olá! Gostaria de criar uma loja virtual para vender meus produtos.',
+      icon: ShoppingBag
+    },
+    {
+      id: 'wordpress', title: 'Manutenção WordPress',
+      description: 'Suporte técnico para manter seu site atualizado, seguro, rápido e funcionando corretamente.',
+      benefits: ['Correções e atualizações', 'Backups', 'Desempenho', 'Ajustes de layout', 'Manutenção preventiva'],
+      cta: 'Preciso de manutenção',
+      message: 'Olá! Preciso de manutenção ou suporte para um site WordPress.',
+      icon: Wrench
+    },
+    {
+      id: 'custom', title: 'Projetos personalizados',
+      description: 'Soluções sob medida para digitalizar processos específicos da sua empresa.',
+      benefits: ['Sistemas administrativos', 'Portais e plataformas', 'Dashboards', 'Controle de processos', 'Integrações'],
+      cta: 'Conversar sobre meu projeto',
+      message: 'Olá! Tenho uma necessidade específica e gostaria de conversar sobre o desenvolvimento de um sistema personalizado.',
+      icon: Code2
+    },
+    {
+      id: 'api', title: 'APIs REST',
+      description: 'APIs seguras e documentadas para conectar sistemas, aplicativos, pagamentos, sites e serviços externos.',
+      benefits: ['Autenticação', 'Documentação', 'Integração com terceiros', 'Segurança', 'Testes automatizados'],
+      cta: 'Solicitar desenvolvimento de API',
+      message: 'Olá! Preciso desenvolver uma API REST ou integrar dois sistemas.',
+      icon: Braces
+    },
+    {
+      id: 'automation', title: 'Automação com n8n',
+      description: 'Automatizamos tarefas repetitivas e fluxos de atendimento para reduzir operações manuais.',
+      benefits: ['Atendimento pelo WhatsApp', 'Qualificação de contatos', 'Agendamentos', 'Integração com CRM', 'Notificações'],
+      cta: 'Automatizar meu atendimento',
+      message: 'Olá! Gostaria de automatizar o atendimento ou algum processo da minha empresa utilizando n8n.',
+      icon: Bot
+    }
   ]
 
-  const benefits: Benefit[] = [
-    { id: 'technology', title: 'Tecnologia de ponta', description: 'Stack moderna e decisões técnicas preparadas para evoluir.', icon: Sparkles },
-    { id: 'results', title: 'Foco em resultados', description: 'Soluções orientadas aos objetivos reais do seu negócio.', icon: Target },
-    { id: 'security', title: 'Código limpo e seguro', description: 'Qualidade de engenharia do planejamento à entrega.', icon: ShieldCheck },
-    { id: 'partnership', title: 'Atendimento próximo', description: 'Comunicação clara e parceria durante toda a jornada.', icon: Handshake },
-    { id: 'agility', title: 'Entrega ágil', description: 'Processo enxuto com visibilidade e entregas incrementais.', icon: Gauge },
-    { id: 'support', title: 'Suporte contínuo', description: 'Acompanhamento para manter sua solução saudável.', icon: Headphones }
-  ]
-
-  const processSteps: ProcessStep[] = [
-    { id: 'discovery', number: '01', title: 'Descoberta', description: 'Entendemos objetivos, desafios e contexto do negócio.', icon: Search },
-    { id: 'planning', number: '02', title: 'Planejamento', description: 'Definimos escopo, prioridades e um caminho claro.', icon: Compass },
-    { id: 'design', number: '03', title: 'Design e arquitetura', description: 'Criamos experiência, interface e base técnica.', icon: Palette },
-    { id: 'development', number: '04', title: 'Desenvolvimento', description: 'Construímos com qualidade, testes e transparência.', icon: FileCode2 },
-    { id: 'delivery', number: '05', title: 'Entrega e suporte', description: 'Publicamos, acompanhamos e evoluímos a solução.', icon: CloudCog }
-  ]
-
-  // Cases demonstrativos: substituir por projetos reais e autorizados antes da publicação.
-  const projects: PortfolioProject[] = [
-    { id: 'management', title: 'Plataforma de gestão', category: 'Sistema web', description: 'Operação centralizada com indicadores e fluxos automatizados.', image: '/images/portfolio/management.svg', href: '#contact' },
-    { id: 'clinic', title: 'Site institucional para clínica', category: 'Site institucional', description: 'Presença digital confiável, rápida e preparada para conversão.', image: '/images/portfolio/clinic.svg', href: '#contact' },
-    { id: 'custom', title: 'Projeto web personalizado', category: 'Produto digital', description: 'Experiência sob medida para uma operação especializada.', image: '/images/portfolio/custom.svg', href: '#contact' },
-    { id: 'api', title: 'Integração por API REST', category: 'Integração', description: 'Dados conectados com segurança entre plataformas críticas.', image: '/images/portfolio/api.svg', href: '#contact' }
-  ]
-
-  // Depoimentos demonstrativos: substituir por depoimentos reais antes da publicação.
-  const testimonials: Testimonial[] = [
-    { id: 'testimonial-1', quote: 'A equipe traduziu um desafio complexo em uma solução simples, rápida e muito bem construída.', name: 'Nome demonstrativo', role: 'Direção', company: 'Empresa demonstrativa', initials: 'ND' },
-    { id: 'testimonial-2', quote: 'Tivemos clareza em todas as etapas e uma entrega que realmente melhorou nossa operação.', name: 'Nome demonstrativo', role: 'Operações', company: 'Empresa demonstrativa', initials: 'ND' },
-    { id: 'testimonial-3', quote: 'O atendimento próximo e a qualidade técnica fizeram toda a diferença no projeto.', name: 'Nome demonstrativo', role: 'Marketing', company: 'Empresa demonstrativa', initials: 'ND' }
+  const trainings: Training[] = [
+    { id: 'sql', title: 'SQL e banco de dados', summary: 'Fundamentos e prática com consultas, relacionamentos e PostgreSQL.', topics: ['SQL', 'Relacionamentos', 'PostgreSQL'], modality: 'Online ou in company', audience: 'Estudantes, profissionais e equipes' },
+    { id: 'apis', title: 'Desenvolvimento de APIs REST', summary: 'Arquitetura, rotas, autenticação, banco de dados, documentação e testes.', topics: ['Arquitetura', 'Autenticação', 'Testes'], modality: 'Online ou in company', audience: 'Desenvolvedores e equipes técnicas' },
+    { id: 'docker', title: 'Docker para desenvolvimento', summary: 'Containers, imagens, volumes, redes e Docker Compose na prática.', topics: ['Containers', 'Volumes', 'Compose'], modality: 'Online ou in company', audience: 'Desenvolvedores e times de produto' },
+    { id: 'n8n', title: 'Automação com n8n', summary: 'Criação de fluxos, APIs, WhatsApp, webhooks e automação de processos.', topics: ['Fluxos', 'Webhooks', 'WhatsApp'], modality: 'Online ou in company', audience: 'Profissionais e empresas' }
   ]
 
   const faqs: FaqItem[] = [
-    { id: 'price', question: 'Quanto custa desenvolver um site institucional?', answer: 'O investimento depende do número de páginas, integrações, complexidade visual e necessidades de conteúdo. Após uma conversa inicial, enviamos uma proposta clara e adequada ao escopo.' },
-    { id: 'deadline', question: 'Qual é o prazo médio de desenvolvimento?', answer: 'O prazo varia conforme o projeto. Um site institucional costuma exigir algumas semanas, enquanto sistemas e integrações são planejados em etapas. O cronograma é definido antes do início.' },
-    { id: 'wordpress', question: 'Vocês trabalham com manutenção de WordPress?', answer: 'Sim. Atuamos com atualizações, segurança, backups, correções, performance e melhorias contínuas em sites WordPress.' },
-    { id: 'integrations', question: 'É possível integrar o site com WhatsApp, CRM ou ERP?', answer: 'Sim. Avaliamos as APIs e regras de cada plataforma para criar integrações seguras com WhatsApp, CRMs, ERPs, pagamentos e outros serviços.' },
-    { id: 'rest-api', question: 'A Weboot desenvolve APIs REST?', answer: 'Sim. Projetamos e desenvolvemos APIs REST documentadas, seguras e escaláveis, tanto para novos produtos quanto para integração de sistemas existentes.' },
-    { id: 'ai', question: 'Vocês trabalham com automação e inteligência artificial?', answer: 'Sim. Criamos automações de processos, atendimento e integrações usando ferramentas como n8n e recursos de inteligência artificial quando fazem sentido para o negócio.' },
-    { id: 'aftercare', question: 'O projeto terá suporte após a entrega?', answer: 'Sim. Podemos estruturar um plano de suporte, monitoramento e evolução contínua de acordo com a necessidade da solução.' },
-    { id: 'responsive-seo', question: 'O site será responsivo e otimizado para Google?', answer: 'Sim. Desenvolvemos com foco em dispositivos móveis, performance, acessibilidade e fundamentos técnicos de SEO.' }
+    { id: 'price', question: 'Quanto custa um site?', answer: 'O valor depende do número de páginas, funcionalidades, integrações e do nível de personalização. Após uma conversa inicial, apresentamos uma proposta adequada ao projeto.' },
+    { id: 'deadline', question: 'Quanto tempo leva para desenvolver?', answer: 'O prazo varia conforme o escopo. Sites mais simples podem ser entregues em poucas semanas, enquanto sistemas e integrações exigem um planejamento maior.' },
+    { id: 'wordpress', question: 'Vocês trabalham com WordPress?', answer: 'Sim. Trabalhamos com criação, ajustes, correções, atualização, segurança e manutenção de sites WordPress.' },
+    { id: 'maintenance', question: 'Posso contratar apenas manutenção?', answer: 'Sim. A manutenção pode ser contratada para correções pontuais ou acompanhamento recorrente.' },
+    { id: 'ecommerce', question: 'Vocês desenvolvem loja virtual?', answer: 'Sim. Desenvolvemos e-commerce com catálogo, carrinho, pagamentos, pedidos e integrações necessárias para a operação.' },
+    { id: 'integrations', question: 'Vocês integram sistemas?', answer: 'Sim. Desenvolvemos APIs e integrações entre sites, sistemas internos, pagamentos, WhatsApp, CRMs e serviços externos.' },
+    { id: 'start', question: 'Como inicio um projeto?', answer: 'Entre em contato pelo WhatsApp, explique sua necessidade e agendaremos uma conversa inicial.' }
   ]
 
-  return { contactLinks, navigation, stats, services, benefits, processSteps, projects, testimonials, faqs }
+  const trustItems = [
+    { label: 'Projetos personalizados', icon: Code2 },
+    { label: 'Atendimento próximo', icon: MessageSquareMore },
+    { label: 'Tecnologias modernas', icon: Database },
+    { label: 'Suporte especializado', icon: ShieldCheck }
+  ]
+
+  return { navigation, services, trainings, faqs, trustItems, Search, GraduationCap }
 }

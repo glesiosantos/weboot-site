@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen overflow-x-clip bg-background text-white antialiased">
+  <div class="min-h-screen overflow-x-clip bg-white text-slate-950 antialiased">
     <NuxtRouteAnnouncer />
     <NuxtPage />
   </div>
