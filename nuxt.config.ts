@@ -9,16 +9,24 @@ export default defineNuxtConfig({
     '@nuxt/eslint'
   ],
   css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    public: {
+      whatsappNumber: ''
+    }
+  },
   app: {
     head: {
       htmlAttrs: { lang: 'pt-BR' },
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
     }
   },
   fonts: {
-    families: [{ name: 'Inter', provider: 'none' }]
+    families: [
+      { name: 'Inter', provider: 'none' },
+      { name: 'Manrope', provider: 'none' }
+    ]
   },
   image: {
     format: ['avif', 'webp'],

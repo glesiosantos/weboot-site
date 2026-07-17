@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-vue-next'
 
 withDefaults(defineProps<{
   href: string
-  variant?: 'primary' | 'outline' | 'whatsapp'
+  variant?: 'primary' | 'secondary' | 'whatsapp'
   external?: boolean
   showArrow?: boolean
 }>(), {
@@ -18,11 +18,11 @@ withDefaults(defineProps<{
     :href="href"
     :target="external ? '_blank' : undefined"
     :rel="external ? 'noopener noreferrer' : undefined"
-    class="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-3 text-center text-sm font-semibold transition duration-300 hover:-translate-y-0.5 sm:px-6 sm:text-base"
+    class="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg px-5 py-3 text-center text-sm font-bold transition duration-200 hover:-translate-y-0.5 sm:px-6 sm:text-base"
     :class="{
-      'bg-brand-gradient text-white shadow-lg shadow-brand/20 hover:brightness-110': variant === 'primary',
-      'border border-white/20 bg-white/[0.03] text-white hover:border-brand-light/60 hover:bg-white/[0.07]': variant === 'outline',
-      'bg-success text-white shadow-lg shadow-success/15 hover:bg-green-500': variant === 'whatsapp'
+      'bg-blue-600 text-white shadow-sm hover:bg-blue-700': variant === 'primary',
+      'border border-slate-300 bg-white text-slate-800 hover:border-blue-300 hover:text-blue-700': variant === 'secondary',
+      'bg-[#25D366] text-white shadow-sm hover:bg-[#1fba59]': variant === 'whatsapp'
     }"
   >
     <slot />

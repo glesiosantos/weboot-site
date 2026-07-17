@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" role="img" aria-labelledby="title desc">
+  <title id="title">Portal WordPress demonstrativo</title>
+  <desc id="desc">Interface conceitual de portal de conteúdo com artigos em destaque.</desc>
+  <defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#0369a1"/><stop offset="1" stop-color="#0f766e"/></linearGradient></defs>
+  <rect width="720" height="450" fill="url(#bg)"/>
+  <rect x="54" y="40" width="612" height="370" rx="20" fill="#fff"/>
+  <circle cx="91" cy="76" r="17" fill="#0284c7"/>
+  <text x="84" y="84" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#fff">W</text>
+  <rect x="122" y="68" width="118" height="15" rx="7" fill="#0f172a"/>
+  <rect x="483" y="71" width="52" height="9" rx="4.5" fill="#94a3b8"/>
+  <rect x="551" y="71" width="76" height="9" rx="4.5" fill="#94a3b8"/>
+  <rect x="82" y="116" width="556" height="137" rx="14" fill="#e0f2fe"/>
+  <rect x="106" y="143" width="238" height="19" rx="7" fill="#0c4a6e"/>
+  <rect x="106" y="175" width="202" height="10" rx="5" fill="#38bdf8"/>
+  <rect x="106" y="199" width="100" height="29" rx="8" fill="#0284c7"/>
+  <rect x="477" y="135" width="126" height="99" rx="12" fill="#67e8f9" opacity=".7"/>
+  <path d="m500 213 30-33 20 19 24-28 17 42z" fill="#0e7490" opacity=".75"/>
+  <rect x="82" y="280" width="169" height="100" rx="12" fill="#f1f5f9"/>
+  <rect x="274" y="280" width="169" height="100" rx="12" fill="#f1f5f9"/>
+  <rect x="466" y="280" width="172" height="100" rx="12" fill="#f1f5f9"/>
+  <g fill="#0f766e"><rect x="98" y="296" width="137" height="39" rx="7"/><rect x="290" y="296" width="137" height="39" rx="7"/><rect x="482" y="296" width="140" height="39" rx="7"/></g>
+  <g fill="#64748b"><rect x="98" y="350" width="101" height="8" rx="4"/><rect x="290" y="350" width="101" height="8" rx="4"/><rect x="482" y="350" width="101" height="8" rx="4"/></g>
+</svg>
