@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { portfolioCategories, type PortfolioCategory } from '~/data/portfolio'
-defineProps<{ modelValue: PortfolioCategory }>()
+const props = defineProps<{ modelValue: PortfolioCategory }>()
 const emit = defineEmits<{ 'update:modelValue': [value: PortfolioCategory] }>()
+const selectAdjacent = (direction: 1 | -1) => {
+  const current = portfolioCategories.findIndex(category => category.value === props.modelValue)
+  const next = (current + direction + portfolioCategories.length) % portfolioCategories.length
+  emit('update:modelValue', portfolioCategories[next]!.value)
+}
 </script>
 
 <template>
@@ -16,6 +21,8 @@ const emit = defineEmits<{ 'update:modelValue': [value: PortfolioCategory] }>()
       class="min-h-11 shrink-0 rounded-full border px-4 text-sm font-bold transition"
       :class="modelValue === category.value ? 'border-blue-600 bg-blue-600 text-white' : 'border-slate-300 bg-white text-slate-600 hover:border-blue-300 hover:text-blue-700'"
       @click="emit('update:modelValue', category.value)"
+      @keydown.right.prevent="selectAdjacent(1)"
+      @keydown.left.prevent="selectAdjacent(-1)"
     >
       {{ category.label }}
     </button>

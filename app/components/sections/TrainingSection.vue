@@ -6,9 +6,9 @@ const message = 'Olá! Gostaria de receber informações sobre os treinamentos d
 </script>
 
 <template>
-  <section id="treinamentos" class="section-space bg-white">
+  <section id="treinamentos" class="section-space bg-white" aria-labelledby="training-title">
     <div class="page-container">
-      <UiSectionHeader label="Treinamentos" title="Treinamentos práticos em desenvolvimento e tecnologia" description="Conteúdos voltados para estudantes, profissionais e empresas que desejam desenvolver conhecimentos aplicáveis ao dia a dia." />
+      <h2 id="training-title" class="sr-only">Treinamentos disponíveis</h2>
       <div class="mt-14 grid gap-5 md:grid-cols-2">
         <article v-for="training in trainings" :key="training.id" class="grid gap-5 rounded-2xl border border-slate-200 p-6 sm:grid-cols-[auto_1fr]">
           <div class="grid size-11 place-items-center rounded-lg bg-blue-50 text-blue-700"><GraduationCap :size="22" /></div>

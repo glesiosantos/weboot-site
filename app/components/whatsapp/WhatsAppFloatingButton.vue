@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { createWhatsAppUrl, trackWhatsAppClick } = useWhatsApp()
-const whatsappUrl = computed(() => createWhatsAppUrl('Olá! Conheci a Weboot pelo site e gostaria de conversar sobre um projeto.'))
+const whatsappUrl = computed(() => createWhatsAppUrl('Olá! Conheci a Weboot pelo site e gostaria de conversar sobre um projeto ou um site.'))
 </script>
 
 <template>
@@ -9,7 +9,7 @@ const whatsappUrl = computed(() => createWhatsAppUrl('Olá! Conheci a Weboot pel
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Falar com a Weboot pelo WhatsApp"
-    class="fixed z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition duration-200 hover:-translate-y-1 hover:bg-[#1fba59] focus-visible:ring-green-300 md:h-auto md:w-auto md:gap-3 md:px-5 md:py-3"
+    class="fixed z-50 flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg transition duration-200 hover:-translate-y-1 hover:bg-blue-700 focus-visible:ring-blue-300 md:h-auto md:w-auto md:gap-3 md:px-5 md:py-3"
     style="bottom: calc(1.25rem + env(safe-area-inset-bottom)); right: calc(1.25rem + env(safe-area-inset-right));"
     @click="trackWhatsAppClick('floating-button')"
   >

@@ -20,9 +20,8 @@ withDefaults(defineProps<{
     :rel="external ? 'noopener noreferrer' : undefined"
     class="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg px-5 py-3 text-center text-sm font-bold transition duration-200 hover:-translate-y-0.5 sm:px-6 sm:text-base"
     :class="{
-      'bg-blue-600 text-white shadow-sm hover:bg-blue-700': variant === 'primary',
+      'bg-blue-600 text-white shadow-sm hover:bg-blue-700': variant === 'primary' || variant === 'whatsapp',
       'border border-slate-300 bg-white text-slate-800 hover:border-blue-300 hover:text-blue-700': variant === 'secondary',
-      'bg-[#25D366] text-white shadow-sm hover:bg-[#1fba59]': variant === 'whatsapp'
     }"
   >
     <slot />

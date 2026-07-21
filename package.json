@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "lint": "eslint .",
+    "test": "vitest run",
     "typecheck": "nuxt typecheck",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -14,10 +15,10 @@
   "devDependencies": {
     "@nuxt/eslint": "^1.16.0",
     "eslint": "^10.7.0",
+    "vitest": "^4.1.10",
     "vue-tsc": "^3.3.7"
   },
   "dependencies": {
-    "@nuxt/fonts": "^0.14.0",
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "lucide-vue-next": "^1.0.0",

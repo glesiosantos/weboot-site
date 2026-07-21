@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowLeft, Check, MessageCircle } from 'lucide-vue-next'
+import { ArrowLeft, Check, ExternalLink, MessageCircle } from 'lucide-vue-next'
 import { getProjectBySlug } from '~/data/portfolio'
 
 const route = useRoute()
@@ -18,6 +18,7 @@ useSeoMeta({
   ogImage: () => project.value?.image,
   ogType: 'article'
 })
+useHead({ link: [{ rel: 'canonical', href: () => `https://weboot.com.br/projetos/${project.value?.slug}` }] })
 </script>
 
 <template>
@@ -33,6 +34,7 @@ useSeoMeta({
               <h1 class="mt-5 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">{{ project.title }}</h1>
               <p class="mt-6 text-lg leading-8 text-slate-600">{{ project.summary }}</p>
               <div class="mt-6 flex flex-wrap gap-2"><span v-for="technology in project.technologies" :key="technology" class="rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-slate-600">{{ technology }}</span></div>
+              <UiBaseButton v-if="project.projectUrl" :href="project.projectUrl" external variant="primary" class="mt-7">Visitar projeto <ExternalLink :size="18" aria-hidden="true" /></UiBaseButton>
             </div>
             <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg"><NuxtImg :src="project.image" :alt="project.imageAlt" width="900" height="563" preload class="aspect-[16/10] size-full object-cover" /></div>
           </div>
@@ -44,12 +46,16 @@ useSeoMeta({
           <div><p class="eyebrow">Contexto</p><h2 class="section-title">Sobre o projeto</h2></div>
           <div class="space-y-10">
             <div><h3 class="text-xl font-bold text-slate-950">Contexto do projeto</h3><p class="mt-3 leading-7 text-slate-600">{{ project.context }}</p></div>
-            <div><h3 class="text-xl font-bold text-slate-950">Problema</h3><p class="mt-3 leading-7 text-slate-600">{{ project.problem }}</p></div>
+            <div><h3 class="text-xl font-bold text-slate-950">Desafio</h3><p class="mt-3 leading-7 text-slate-600">{{ project.problem }}</p></div>
             <div><h3 class="text-xl font-bold text-slate-950">Solução</h3><p class="mt-3 leading-7 text-slate-600">{{ project.solution }}</p></div>
             <div><h3 class="text-xl font-bold text-slate-950">Funcionalidades</h3><ul class="mt-4 grid gap-3 sm:grid-cols-2"><li v-for="feature in project.features" :key="feature" class="flex gap-2 text-slate-600"><Check :size="18" class="mt-0.5 shrink-0 text-blue-600" />{{ feature }}</li></ul></div>
+            <div><h3 class="text-xl font-bold text-slate-950">Resultados operacionais</h3><ul class="mt-4 grid gap-3 sm:grid-cols-2"><li v-for="result in project.results" :key="result" class="flex gap-2 text-slate-600"><Check :size="18" class="mt-0.5 shrink-0 text-blue-600" />{{ result }}</li></ul></div>
+            <div><h3 class="text-xl font-bold text-slate-950">Tecnologias</h3><div class="mt-4 flex flex-wrap gap-2"><span v-for="technology in project.technologies" :key="technology" class="rounded-full bg-slate-100 px-3 py-1.5 text-sm font-semibold text-slate-600">{{ technology }}</span></div></div>
           </div>
         </div>
       </section>
+
+      <section class="section-space bg-slate-50"><div class="page-container"><p class="eyebrow">Galeria</p><h2 class="section-title">Telas do projeto</h2><div class="mt-8 grid gap-6 md:grid-cols-2"><figure v-for="(image, index) in (project.gallery?.length ? project.gallery : [project.image])" :key="`${image}-${index}`" class="overflow-hidden rounded-2xl border border-slate-200 bg-white"><NuxtImg :src="image" :alt="`${project.title} — tela ${index + 1}`" width="900" height="563" loading="lazy" class="aspect-[16/10] w-full object-cover" /></figure></div></div></section>
 
       <section class="bg-white px-4 pb-16 sm:px-6 sm:pb-20">
         <div class="mx-auto max-w-7xl rounded-2xl bg-blue-700 p-8 text-center text-white sm:p-12">
