@@ -4,6 +4,7 @@ defineProps<{ status?: PortfolioProject['status'] }>()
 const labels = {
   completed: 'Concluído',
   'in-development': 'Em desenvolvimento',
+  inactive: 'Inativo no momento',
   private: 'Projeto privado',
   demonstrative: 'Projeto demonstrativo'
 }

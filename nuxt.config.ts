@@ -5,7 +5,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
-    '@nuxt/fonts',
     '@nuxt/eslint'
   ],
   css: ['~/assets/css/main.css'],
@@ -21,12 +20,6 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
     }
-  },
-  fonts: {
-    families: [
-      { name: 'Inter', provider: 'none' },
-      { name: 'Manrope', provider: 'none' }
-    ]
   },
   image: {
     format: ['avif', 'webp'],

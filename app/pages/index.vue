@@ -1,12 +1,14 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Weboot | Sites, E-commerce, Sistemas, APIs e Automações',
-  description: 'Criação de sites institucionais, landing pages, e-commerce, manutenção WordPress, sistemas personalizados, APIs REST, automações com n8n e treinamentos.',
-  ogTitle: 'Weboot | Sites, E-commerce, Sistemas, APIs e Automações',
-  ogDescription: 'Sites, lojas virtuais, sistemas, APIs e automações desenvolvidos sob medida para empresas.',
+  title: 'Weboot | Desenvolvimento de Sites, Sistemas e Automações',
+  description: 'Desenvolvimento de sites profissionais, lojas virtuais, sistemas personalizados e automações com WhatsApp, n8n e APIs.',
+  ogTitle: 'Weboot | Desenvolvimento de Sites, Sistemas e Automações',
+  ogDescription: 'Desenvolvimento de sites profissionais, lojas virtuais, sistemas personalizados e automações com WhatsApp, n8n e APIs.',
   ogType: 'website',
-  ogImage: 'https://weboot.com.br/images/weboot_logo.png',
-  ogImageAlt: 'Weboot — desenvolvimento web sob medida',
+  ogImage: 'https://weboot.com.br/images/og-weboot.svg',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: 'Weboot — Sites, projetos e automações',
   twitterCard: 'summary_large_image'
 })
 
@@ -35,12 +37,9 @@ useScrollReveal()
       <SectionsHeroSection />
       <SectionsTrustBar />
       <SectionsServicesSection />
-      <SectionsWebsiteSolutionsSection />
-      <SectionsWordPressSection />
-      <SectionsCustomSolutionsSection />
-      <SectionsProcessSection />
+      <SectionsFeaturedCase />
       <SectionsPortfolioSection />
-      <SectionsTrainingSection />
+      <SectionsProcessSection />
       <SectionsBenefitsSection />
       <SectionsFaqSection />
       <SectionsFinalCtaSection />

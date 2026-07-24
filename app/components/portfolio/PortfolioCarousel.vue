@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import type { PortfolioProject } from '~/data/portfolio'
+import { clampCarouselIndex } from '~/utils/portfolio'
 
 const props = defineProps<{ projects: PortfolioProject[] }>()
 const carouselRef = ref<HTMLElement>()
@@ -16,7 +17,7 @@ const updateIndex = () => {
   const carousel = carouselRef.value
   if (!carousel || !carousel.children.length) return
   const first = carousel.children[0] as HTMLElement
-  activeIndex.value = Math.round(carousel.scrollLeft / (first.offsetWidth + 24))
+  activeIndex.value = clampCarouselIndex(Math.round(carousel.scrollLeft / (first.offsetWidth + 24)), props.projects.length)
 }
 
 const reset = async () => {
@@ -33,10 +34,10 @@ defineExpose({ reset })
   <div>
     <div class="mb-5 flex justify-end gap-2">
       <button type="button" class="grid size-11 place-items-center rounded-full border border-slate-300 bg-white text-slate-700 hover:border-blue-400 hover:text-blue-700 disabled:opacity-40" aria-label="Projeto anterior" :disabled="activeIndex === 0" @click="scroll(-1)">
-        <ChevronLeft :size="21" />
+        <ChevronLeft :size="21" aria-hidden="true" />
       </button>
       <button type="button" class="grid size-11 place-items-center rounded-full border border-slate-300 bg-white text-slate-700 hover:border-blue-400 hover:text-blue-700 disabled:opacity-40" aria-label="Próximo projeto" :disabled="activeIndex >= projects.length - 1" @click="scroll(1)">
-        <ChevronRight :size="21" />
+        <ChevronRight :size="21" aria-hidden="true" />
       </button>
     </div>
     <div

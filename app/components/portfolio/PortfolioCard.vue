@@ -23,10 +23,10 @@ const message = computed(() => `Olá! Vi o projeto ${props.project.title} no sit
       </div>
       <div class="mt-auto grid gap-2 pt-6 sm:grid-cols-2">
         <NuxtLink :to="`/projetos/${project.slug}`" class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-slate-300 px-3 text-sm font-bold text-slate-700 hover:border-blue-300 hover:text-blue-700">
-          Ver detalhes <ArrowUpRight :size="16" />
+          Ver case <ArrowUpRight :size="16" aria-hidden="true" />
         </NuxtLink>
-        <a :href="createWhatsAppUrl(message)" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[#25D366] px-3 text-center text-sm font-bold text-white hover:bg-[#1fba59]" @click="trackWhatsAppClick('portfolio', project.slug)">
-          <MessageCircle :size="16" /> Projeto semelhante
+        <a :href="createWhatsAppUrl(message)" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-blue-600 px-3 text-center text-sm font-bold text-white hover:bg-blue-700" @click="trackWhatsAppClick('portfolio', project.slug)">
+          <MessageCircle :size="16" aria-hidden="true" /> Projeto semelhante
         </a>
       </div>
     </div>

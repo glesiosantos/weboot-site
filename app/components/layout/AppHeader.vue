@@ -4,7 +4,7 @@ import { Menu } from 'lucide-vue-next'
 const { navigation } = useLandingPage()
 const { createWhatsAppUrl, trackWhatsAppClick } = useWhatsApp()
 const menuOpen = ref(false)
-const whatsappUrl = computed(() => createWhatsAppUrl('Olá! Gostaria de conversar sobre um projeto com a Weboot.'))
+const whatsappUrl = computed(() => createWhatsAppUrl('Olá! Conheci a Weboot pelo site e gostaria de solicitar um orçamento.'))
 
 const closeMenu = () => { menuOpen.value = false }
 const handleKeydown = (event: KeyboardEvent) => {
@@ -23,13 +23,13 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white">
     <a href="#main-content" class="absolute left-4 top-2 z-[60] -translate-y-20 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white transition focus:translate-y-0">
       Pular para o conteúdo
     </a>
     <div class="page-container flex h-[4.75rem] items-center justify-between gap-5">
       <NuxtLink to="/#inicio" class="shrink-0" aria-label="Weboot — ir para o início">
-        <NuxtImg src="/images/weboot_logo.png" alt="Weboot" width="226" height="30" class="h-7 w-auto object-contain sm:h-8" preload />
+        <NuxtImg src="/images/weboot_logo.png" alt="Weboot" width="226" height="30" class="h-auto w-[168px] object-contain sm:w-[190px]" preload />
       </NuxtLink>
 
       <nav class="hidden lg:block" aria-label="Navegação principal">
