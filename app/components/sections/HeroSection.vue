@@ -25,7 +25,7 @@ const whatsappUrl = computed(() => createWhatsAppUrl('Olá! Conheci a Weboot pel
         <div class="absolute -bottom-1 right-3 w-[34%] overflow-hidden rounded-[1.35rem] border-[6px] border-slate-900 bg-white shadow-xl sm:right-7">
           <NuxtImg src="/images/portfolio/wordpress.svg" alt="Prévia visual do portal CREA-PI" width="360" height="600" preload class="aspect-[3/5] w-full object-cover" />
         </div>
-        <p class="absolute bottom-1 left-3 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800 shadow-lg sm:left-[-1.5rem]">Augile + CREA-PI</p>
+        <!-- <p class="absolute bottom-1 left-3 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800 shadow-lg sm:left-[-1.5rem]">Augile + CREA-PI</p> -->
       </div>
     </div>
   </section>
