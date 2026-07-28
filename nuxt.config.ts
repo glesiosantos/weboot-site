@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
+    'nuxt-gtag'
   ],
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
