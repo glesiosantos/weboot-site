@@ -112,6 +112,33 @@ export const projects: PortfolioProject[] = [
   //   results: ['Experiência responsiva', 'Processos esportivos centralizados', 'Estrutura preparada para evolução do produto']
   // },
   {
+    id: 'radio expedição',
+    slug: 'radio-expedicao',
+    title: 'Rádio Expedição',
+    category: 'sites',
+    categoryLabel: 'Site institucional',
+    summary: 'Portal dedicado à divulgação de expedições de radioamadorismo realizadas em áreas de preservação ambiental e locais de interesse histórico.',
+    image: '/images/portfolio/radio_expedicao.png',
+    imageAlt: 'Mockup do site Rádio Expedição',
+    technologies: ['WordPress'],
+    status: 'completed',
+    context: 'Desenvolvimento de um portal institucional para apresentar projetos, expedições e conteúdos voltados ao radioamadorismo. O site reúne informações sobre operações realizadas em parques, ilhas, montanhas, faróis, fortes, museus e outros locais de interesse, incentivando a preservação ambiental, a troca de conhecimento e a integração entre radioamadores do Brasil e do mundo.',
+    features: [
+      'Design responsivo',
+      'Gerenciamento de conteúdo',
+      'SEO técnico',
+      'Galeria de imagens',
+      'Blog de notícias',
+      'Integração com redes sociais'
+    ],
+    results: [
+      'Maior visibilidade para o projeto Rádio Expedição',
+      'Facilidade na publicação de conteúdos e expedições',
+      'Melhor experiência de navegação em dispositivos móveis',
+      'Fortalecimento da comunidade de radioamadores'
+    ]
+  },
+  {
     id: 'weboot',
     slug: 'weboot',
     title: 'Weboot',
